@@ -1,7 +1,6 @@
 # University Portfolio
-This repository contains selected projects from my two degrees:
-- Previous: Bachelor of Science and Commerce majoring in Computer Science and Finance | University of Otago (2021-2024)
-- Current: Master of Computer Science | Victoria University (2025)
+This repository contains selected projects from my Bachelors degree at Otago University:
+- Bachelor of Science and Commerce majoring in Computer Science and Finance | University of Otago (2021-2024)
 
 ## Projects
 - **ANDIE: A Non-Destructive Image Editor** - 2022 Group Project
