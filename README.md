@@ -1,4 +1,4 @@
-# University Portfolio
+# Otago University Portfolio
 This repository contains selected projects from my Bachelors degree at Otago University:
 - Bachelor of Science and Commerce majoring in Computer Science and Finance | University of Otago (2021-2024)
 
