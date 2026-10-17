@@ -1,0 +1,19 @@
+{
+  "name": "cosc203_asgn2_2023",
+  "version": "1.0.0",
+  "description": "Web server for cosc203 asgn2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "all": "^0.0.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.1"
+  },
+  "keywords": []
+}

@@ -1,0 +1,11 @@
+<div id="key_panel">
+    <h2>Conservation Status</h2>
+    <div id="conservation_status_key">
+        <% for(let i = 0; i < status.length; i++) { %>
+            <div>
+                <span class="key-circle" style="background-color: <%=status[i].status_colour%>;"></span>
+                <p><%=status[i].status_name%></p>
+            </div>
+        <% } %>
+    </div>
+</div>

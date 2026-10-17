@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>File Not Found</title>
+        <link href="/css/style.css" rel="stylesheet">
+        <script defer src="scripts/key-setup.js"></script>
+        <script defer src="scripts/filter-display.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <%- include('partials/header') %>
+        <div id="background">
+            <div id="black-overlay"></div>
+            <div id="error-section">
+                <h1>PAGE NOT FOUND</h1>
+                <a href="/">
+                    <button>Home</button>
+                </a>
+            </div>
+        </div>
+        
+        <%- include('partials/footer') %>
+    </body>
+</html>

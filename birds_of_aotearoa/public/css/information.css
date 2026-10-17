@@ -1,0 +1,135 @@
+*{
+    /*border: 1px solid red;*/
+    font-family: 'Roboto';
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 16px;
+}
+
+#background-img{
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#black-overlay{
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#bird-info{
+    position: absolute;
+    top: 48%;
+    transform: translateY(-52%);
+    right: 52%;
+    color: white;
+    text-align: center;
+}
+
+#bird-img{
+    position: absolute;
+    top: 48%;
+    transform: translateY(-52%);
+    left: 52%;
+    width: 30vh;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 5%;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+#names{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateY(-80%) translateX(-50%);
+    color: white;
+    text-align: center;
+}
+
+#names h1{
+    font-size: 50px;
+}
+#names h2{
+    font-size: 30px;
+}
+
+.child_div{
+    flex: 1 1 auto;
+    display: flex;
+}
+
+.attributes, .details{
+    display: flex;
+    flex-flow: column;
+    font-size: 15px;
+}
+
+.attributes{
+    flex: 0 1 auto;
+    font-weight: bold;
+    text-align: right;
+}
+
+.details{
+    flex: 1 1 auto;
+    padding: 0 0 0 10px;
+    text-align: left;
+}
+
+#back{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    z-index: 1;
+    
+}
+
+#back img{
+    height: 30px;
+    float: left;
+}
+
+#back h2{
+    float: right;
+    justify-content: center;
+}
+
+#back:hover{
+    transform: scale(1.05);
+}
+
+#edit-button, #delete-button{
+    position: absolute;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 0;
+    border-radius: 10px;
+}
+
+#edit-button:hover, #delete-button:hover{
+    transform: translateX(-50%) scale(1.05);
+}
+
+#edit-button{
+    bottom: 200px;
+}
+
+#delete-button{
+    bottom: 150px;
+    color: red;
+}

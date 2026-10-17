@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%=bird.primary_name%></title>
+    <script defer src="/scripts/photo-preview.js"></script>
+    <link href="/css/create.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <header id="create-header">
+        <h2 id="create-name">Edit <%=bird.primary_name%></h2>
+    </header>
+    <main id="main">
+        <div id="black-overlay"></div>
+        <form method="POST" action="/birds/edit" id="inputs" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Names</legend>
+                <label for="english_name">English Name</label>
+                <input type="text" name="english_name" value="<%=bird.english_name%>" required>
+                <label for="primary_name">Primary Name</label>
+                <input type="text" name="primary_name" value="<%=bird.primary_name%>" required>
+            </fieldset>
+            <fieldset>
+                <legend>Taxonomy</legend>
+                <label for="scientific_name">Scientific Name</label>
+                <input type="text" name="scientific_name" value="<%=bird.scientific_name%>" required>
+                <label for="order_name">Order</label>
+                <input type="text" name="order_name" value="<%=bird.order_name%>" required>
+                <label for="family">Family</label>
+                <input type="text" name="family" value="<%=bird.family%>" required>
+            </fieldset>
+            <fieldset>
+                <legend>Status</legend>
+                <label for="conservation_status">Conservation Status</label>
+                <select name="conservation_status" value="<%=bird.status_name%>" required>
+                    <% for(let i = 0; i < status.length; i++) { %>
+                        <% if(status[i].status_name == bird.status_name){ %>
+                            <option value="<%=status[i].status_name%>" selected><%=status[i].status_name%></option>
+                        <% }else {%>
+                            <option value="<%=status[i].status_name%>"><%=status[i].status_name%></option>
+                        <% } %>
+                    <% } %>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Size</legend>
+                <label for="weight">Weight (g)</label>
+                <input type="number" name="weight" value="<%=bird.weight%>" required>
+                <label for="length">Length (cm)</label>
+                <input type="number" name="length" value="<%=bird.length%>" required>
+            </fieldset>
+            <fieldset>
+                <legend>Photo</legend>
+                <label for="credit">Photographer</label>
+                <input type="text" name="credit" value="<%=bird.photographer%>" required>
+                <label for="photo">Replace Photo (optional)</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </fieldset>
+            <input type="hidden" name="bird_id" value="<%=bird.bird_id%>">
+            <button id="submit-button">Edit</button>
+        </form>
+        <div id="photo-container">
+            <img id="photo-preview"
+                src="/images/<%= bird.filename %>"
+                alt="Current bird photograph">
+        </div>
+        
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

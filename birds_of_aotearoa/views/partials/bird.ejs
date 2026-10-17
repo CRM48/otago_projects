@@ -1,0 +1,35 @@
+<div id="birds_container">
+    <% for(let i = 0; i < birds.length; i++) { %>
+    <a href="/birds/<%=birds[i].bird_id%>"> <!---->
+        <div class="bird_object">
+            <span style="background-color: <%=birds[i].status_colour;%>" class="circle"></span>
+            <img src="images/<%=birds[i].filename;%>" alt="" class="bird_img">
+            <section class="maori_name_container">
+                <h3 class="maori_name"><%=birds[i].primary_name%></h3><!---->
+                <p class="credit">Photo by <%=birds[i].photographer%></p>
+            </section>
+            <section class="info-parent">
+                <h4 class="english_name"><%=birds[i].english_name%></h4>
+                <section class="info-child">
+                    <div class="attributes">
+                        <p>Scientific name</p>
+                        <p>Family</p>
+                        <p>Order</p>
+                        <p>Status</p>
+                        <p>Length</p>
+                        <p>Weight</p>
+                    </div>
+                    <div class="details">
+                        <p><%=birds[i].scientific_name%></p>
+                        <p><%=birds[i].family%></p>
+                        <p><%=birds[i].order_name%></p>
+                        <p><%=birds[i].status_name%></p>
+                        <p><%=birds[i].length%>cm</p>
+                        <p><%=birds[i].weight%>g</p>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </a>
+    <% } %>
+</div>
