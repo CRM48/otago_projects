@@ -29,3 +29,45 @@ jobs:
 
       - name: Run tests
         run: ctest --test-dir vintage_vault/build -C Debug --output-on-failure
+  
+  coverage:
+    name: Code Coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install gcovr
+        run: python3 -m pip install gcovr
+
+      - name: Configure CMake
+        run: >
+          cmake -S vintage_vault
+          -B vintage_vault/build-coverage
+          -DCMAKE_BUILD_TYPE=Debug
+          -DCMAKE_CXX_COMPILER=g++
+          -DCMAKE_CXX_FLAGS=--coverage
+          -DCMAKE_EXE_LINKER_FLAGS=--coverage
+
+      - name: Build project
+        run: cmake --build vintage_vault/build-coverage
+
+      - name: Run tests
+        run: ctest --test-dir vintage_vault/build-coverage --output-on-failure
+
+      - name: Generate coverage report
+        run: |
+          gcovr --root vintage_vault \
+            vintage_vault/build-coverage \
+            --exclude 'vintage_vault/tests/.*' \
+            --cobertura vintage_vault/build-coverage/coverage.xml \
+            --html-details vintage_vault/build-coverage/coverage.html
+          gcovr --root vintage_vault vintage_vault/build-coverage
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: vintage-vault-coverage
+          path: vintage_vault/build-coverage/coverage*
+
