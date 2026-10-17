@@ -70,4 +70,14 @@ jobs:
         with:
           name: vintage-vault-coverage
           path: vintage_vault/build-coverage/coverage*
+      
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: vintage_vault/build-coverage/coverage.xml
+          disable_search: true
+          flags: vintage-vault
+          fail_ci_if_error: true
+
 
