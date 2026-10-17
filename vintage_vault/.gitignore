@@ -4,6 +4,8 @@ out/
 bin/
 Debug/
 Release/
+build-coverage/
+docs/
 
 # Compiler and coverage files
 *.o

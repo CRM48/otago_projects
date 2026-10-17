@@ -1,0 +1,12 @@
+PROJECT_NAME           = "VintageVault"
+PROJECT_BRIEF          = "C++ command-line game collection"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = .
+FILE_PATTERNS          = *.cpp *.h
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */build/* */build-coverage/* */docs/*
+EXTRACT_ALL            = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+HTML_OUTPUT            = html
+QUIET                  = YES
