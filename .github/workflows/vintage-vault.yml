@@ -1,0 +1,31 @@
+
+name: VintageVault CI
+
+on:
+  push:
+    paths:
+      - "vintage_vault/**"
+      - ".github/workflows/vintage-vault.yml"
+  pull_request:
+    paths:
+      - "vintage_vault/**"
+      - ".github/workflows/vintage-vault.yml"
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure CMake
+        run: cmake -S vintage_vault -B vintage_vault/build
+
+      - name: Build project
+        run: cmake --build vintage_vault/build --config Debug
+
+      - name: Run tests
+        run: ctest --test-dir vintage_vault/build -C Debug --output-on-failure

@@ -1,0 +1,24 @@
+# Build outputs
+build/
+out/
+bin/
+Debug/
+Release/
+
+# Compiler and coverage files
+*.o
+*.obj
+*.exe
+*.gcda
+*.gcno
+*.gcov
+
+# Editor and system files
+.vscode/
+.vs/
+.DS_Store
+
+# Generated runtime files
+python_debug.log
+temp_input.txt
+temp_output.txt
