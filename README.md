@@ -16,7 +16,7 @@ The projects cover a range of areas including computer graphics, artificial inte
 - [**Vintage Vault**](vintage_vault) – Web application development and database integration
 - [**HTTP Proxy Cache**](http_proxy_cache) – HTTP networking and caching in Java
 - [**Rational Arithmetic**](rational_arithmetic) – Mathematical computation and object-oriented programming
-- [**Counting it Up**](Counting%20it%20up) – Efficient computation of binomial coefficients
+- [**Counting it Up**](CountingItUp) – Efficient computation of binomial coefficients
 - [**Where in the World is CS**](WhereInTheWorldIsCS) – Coordinate conversion and geographical visualisation
 - [**Snowflake**](Snowflake) – Recursive fractal generation and GUI development
 - [**Dates**](Dates) – Date validation, parsing and formatting
